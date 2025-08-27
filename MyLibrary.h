@@ -17,3 +17,5 @@ extern "C"
 
 extern "C" MyLibrary_API int Add(int a, int b);
 extern "C" MyLibrary_API int Subtract(int a, int b);
+extern "C" MyLibrary_API int MyMessageBoxError(const wchar_t* message, const wchar_t* boxTitle);
+extern "C" MyLibrary_API int MyMessageBoxWarning(const wchar_t* message, const wchar_t* boxTitle);
