@@ -13,6 +13,7 @@
 #endif
 
 typedef size_t(*WriteCallback) (const char* message);
+size_t writefunction(void* ptr, size_t size, size_t nmed );
 
 extern "C"
 {

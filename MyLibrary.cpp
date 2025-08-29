@@ -19,6 +19,14 @@ MyLibrary_API int HTPPGet(const char* url, WriteCallback callback)
         curl_easy_setopt(curl, CURLOPT_URL, url);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writefunction);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+
+        res = curl_easy_perform(curl);
+
+
+        if (res != CURLE_OK)
+        {
+            std::cerr << "Error al hacer la peticion:" << std::endl;
+        }
         
     }
 }
