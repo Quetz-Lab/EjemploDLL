@@ -3,6 +3,7 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <iostream>
+#include "curl/curl.h"
 
 
 #ifdef  MyLibrary_EXPORTS
@@ -10,9 +11,13 @@
 #else
 #define MyLibrary_API __declspec(dllexport)
 #endif
+
+typedef size_t(*WriteCallback) (const char* message);
+
 extern "C"
 {
 	MyLibrary_API void HelloWorld();
+	MyLibrary_API int HTPPGet(const char* url, WriteCallback callback);
 }
 
 extern "C" MyLibrary_API int Add(int a, int b);
